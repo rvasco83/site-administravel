@@ -1,7 +1,7 @@
 <?php
 
 function setInternalServerError($errno, $errstr = null, $errfile = null, $errline = null) {
-
+    http_response_code(500);
     echo '<h1>Error</h1>';
 
     if(!DEBUG) {
