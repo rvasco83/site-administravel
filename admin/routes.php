@@ -1,9 +1,9 @@
 <?php
 
 if (resolve('/admin')) {
-    echo 'Administração';
+    render('admin/home', 'admin');
 } elseif (resolve('/admin/pages')) {
-    echo 'Adinistração de Páginas';
+    render('admin/pages', 'admin');
 } else {
     echo 'Página não encontrada';
 }
