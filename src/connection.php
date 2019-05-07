@@ -1,5 +1,5 @@
 <?php
 
-mysql_report(MYSQLI_REPORT_ERROR);
+mysqli_report(MYSQLI_REPORT_ERROR);
 
-$conn = mysqli('localhost', 'root', 'rootPass', 'app');
+$conn = new mysqli('db', 'root', 'rootPass', 'app');
