@@ -1,13 +1,8 @@
 <?php
 
-
 require __DIR__ . '/src/resolve-route.php';
-
-function render($content, $template, array $data = []){
-
-    $content = __DIR__ . '/template/' . $content . '.tpl.php';
-    return require __DIR__ .'/template/' . $template . '.tpl.php';
-}
+require __DIR__ . '/src/render.php';
+require __DIR__ . '/src/connection.php';
 
 if (resolve('/admin/?(.*)')) {
     require __DIR__ . '/admin/routes.php';
