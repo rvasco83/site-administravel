@@ -3,7 +3,7 @@
 <form action="" method="POST">
     <div class="form-group">
         <label for="pagesTitle">Título</label>
-        <input name="title" id="pagesTitle" type="text" class="form-control" placeholder="Digite o título da página">
+        <input name="title" id="pagesTitle" type="text" class="form-control" placeholder="Digite o título da página" required>
     </div>
 
     <div class="form-group">
@@ -17,7 +17,8 @@
     </div>
 
     <div class="form-group">
-        // editor de texto
+        <input id="pagesBody" type="hidden" name="body">
+        <trix-editor input="pagesBody"></trix-editor>
     </div>
 
     <button type="submit" class="btn btn-primary">Salvar</button>
