@@ -12,7 +12,7 @@
         <td>1</td>
         <td>vasco@vasco.com</td>
         <td class="text-right">
-            <a href="" class="btn btn-primary btn-sm">Ver</a>
+            <a href="/admin/users/1" class="btn btn-primary btn-sm">Ver</a>
         </td>
     </tbody>
 </table>
