@@ -42,9 +42,18 @@ $pages_create = function () use ($conn) {
     return $stmt->execute();
 };
 
-$pages_edit = function ($id) {
-    //editar uma página
+$pages_edit = function ($id) use ($conn){
+    $data = pages_get_data('/admin/pages/create/' . $id . '/edit');
+
+    $sql = 'UPDATE pages SET title=?, url=?, body=?, updated=NOW() WHERE id=?';
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('sssi', $data['title'], $data['url'], $data['body'], $id);
+
     flash('Alterou registro com sucesso', 'success');
+
+    return $stmt->execute();
+
 };
 
 $pages_delete = function ($id) {
