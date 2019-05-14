@@ -1,7 +1,22 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: rodrigo
- * Date: 13-05-2019
- * Time: 16:45
- */
+
+$users_all = function () use ($conn) {
+    $result = $conn->query('SELECT * FROM users');
+    return $result->fetch_all(MYSQLI_ASSOC);
+};
+
+$users_view = function () use ($conn) {
+
+};
+
+$users_create = function () use ($conn) {
+
+};
+
+$users_edit = function () use ($conn) {
+
+};
+
+$users_delete = function () use ($conn) {
+
+};

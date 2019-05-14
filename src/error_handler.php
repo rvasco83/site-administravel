@@ -1,11 +1,19 @@
 <?php
 
-function setInternalServerError($errno, $errstr = null, $errfile = null, $errline = null) {
+function setInternalServerError($errno = null, $errstr = null, $errfile = null, $errline = null) {
     http_response_code(500);
     echo '<h1>Error</h1>';
 
     if(!DEBUG) {
         exit;
+    }
+
+    if (is_object($errno)) {
+        $err = $errno;
+        $errno = $err->getCode();
+        $errstr = $err->getMessage();
+        $errfile = $err->getFile();
+        $errline = $err->getCline();
     }
 
     echo '<span style="font-weigth: bold; color: red">';
