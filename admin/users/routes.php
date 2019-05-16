@@ -13,9 +13,9 @@ if(resolve('/admin/users')) {
     }
     render('admin/users/create','admin');
 
-}elseif (resolve('/admin/users/(\d+)')) {
-
-    render('admin/users/view','admin');
+}elseif ($params = resolve('/admin/users/(\d+)')) {
+    $user = $users_view($params[1]);
+    render('admin/users/view','admin', compact('user'));
 
 }elseif (resolve('/admin/users/(\d+)/edit')) {
 
