@@ -21,8 +21,8 @@ if(resolve('/admin/users')) {
 
     render('admin/users/edit', 'admin');
 
-}elseif (resolve('/admin/users/(\d+)/delete')) {
-
+}elseif ($params = resolve('/admin/users/(\d+)/delete')) {
+    $users_delete($params[1]);
     return header ('location: /admin/users');
 
 }

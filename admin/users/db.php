@@ -46,6 +46,13 @@ $users_edit = function () use ($conn) {
 
 };
 
-$users_delete = function () use ($conn) {
+$users_delete = function ($id) use ($conn) {
+    $sql = 'DELETE FROM users WHERE id=?';
 
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('i', $id);
+
+    flash('Removido com sucesso', 'success');
+
+    return $stmt->execute();
 };
