@@ -9,6 +9,9 @@ if (resolve('/admin')) {
 } elseif (resolve('/admin/users.*')) {
     include __DIR__ . '/users/routes.php';
 
+} elseif (resolve('/admin/uploads/image')) {
+    echo 'deu certo';
+
 } else {
     http_response_code(404);
     echo 'Página não encontrada';
