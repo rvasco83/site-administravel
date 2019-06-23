@@ -10,7 +10,7 @@ if (resolve('/admin')) {
     include __DIR__ . '/users/routes.php';
 
 } elseif (resolve('/admin/uploads/image')) {
-    echo 'deu certo';
+    echo json_encode($_FILES);
 
 } else {
     http_response_code(404);
